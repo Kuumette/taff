@@ -1,0 +1,23 @@
+{
+  "UT1": {
+    "id": "UT1",
+    "positionX": "50%",
+    "positionY": "10%"
+  },
+  "UT2": {
+    "id": "UT2",
+    "positionX": "0%",
+    "positionY": "9%"
+  },
+  "UT3": {
+    "id": "UT3",
+    "positionX": "-5%",
+    "positionY": "-3%"
+  },
+  "UT4": {
+    "id": "UT4",
+    "positionX": "-20%",
+    "positionY": "25%"
+  },
+  "img": "./ressources/overlay.png"
+}

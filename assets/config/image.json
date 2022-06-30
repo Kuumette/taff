@@ -1,0 +1,24 @@
+{
+	"lastImage": {
+		"img": "./ressources/lastImage.jpg"
+	},
+	"lastSubstractionImage": {
+		"img": "./ressources/lastSubImage.jpg"
+	},
+	"panorama": {
+		"img": "./ressources/panorama.png"
+	},
+	"attenuation": {
+		"img": "./ressources/attenuation.jpg"
+	},
+	"lastAnimation": {
+		"img": "./ressources/lastAnim.mp4"
+	},
+	"lastSubstractionAnimation": {
+		"img": "./ressources/lastSubAnim.mp4"
+	},
+	"day": {
+		"date": "2020-02-16",
+		"heure": "03:20 UT"
+	}
+}

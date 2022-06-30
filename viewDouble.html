@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="Cache-Control"
+			content="no-cache, no-store, must-revalidate"
+		/>
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta
+			http-equiv="Refresh"
+			url="http://127.0.0.1:5502/viewDouble.html"
+		/>
+		<link
+			rel="stylesheet"
+			href="./assets/css/bootstrap-5.1.3-dist/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="./assets/css/dual_view/menu.css" />
+		<link rel="stylesheet" href="./assets/css/dual_view/style.css" />
+		<link rel="stylesheet" href="./assets/css/dual_view/toggle.css" />
+		<link rel="stylesheet" href="./assets/css/dual_view/range.css" />
+		<title>Apical | SplitScren</title>
+	</head>
+	<body>
+		<p class="delai">
+			<span class="secondes" id="temps"></span>
+		</p>
+		<section class="row">
+			<section class="col-xl-6 side" id="leftSide">
+				<!-- Toggle auto refresh -->
+				<section id="d2">
+					<div
+						class="d-flex flex-row-reverse bd-highlight"
+						id="autoGauche"
+					>
+						<div class="bd-highlight">
+							<label class="switch" for="checkbox-leftSide">
+								<input
+									type="checkbox"
+									id="checkbox-leftSide"
+									checked
+								/>
+								<div class="slider round"></div>
+							</label>
+							<p id="d2">Auto refresh</p>
+						</div>
+					</div>
+
+					<!-- Fin toggle auto refresh -->
+
+					<!-- Toggle overlay -->
+					<div
+						id="lastGauche"
+						class="d-flex flex-row-reverse bd-highlight"
+					>
+						<div class="bd-highlight">
+							<label class="switch" for="checkbox_coord-leftSide">
+								<input
+									type="checkbox"
+									id="checkbox_coord-leftSide"
+								/>
+								<div class="slider round"></div>
+							</label>
+							<p>TCS - Overlay</p>
+						</div>
+					</div>
+				</section>
+				<!-- Fin toggle overlay -->
+				<div id="warning" class="warningLeft"></div>
+				<div id="infoImg" class="leftInfo"></div>
+				<div id="content" class="left"></div>
+				<div id="menuLeft">
+					<div id="menuD">
+						<ul>
+							<li class="menuDeroulant">
+								<a href="#" id="menuDisplay">Display</a>
+								<ul class="sousMenuDisplay">
+									<li>
+										<a
+											href="#"
+											class="btnDisplay"
+											id="defaultLeft"
+											>Default</a
+										>
+									</li>
+									<li>
+										<a
+											href="#"
+											class="btnDisplay"
+											id="invertDefaultLeft"
+											>Invert</a
+										>
+									</li>
+									<li>
+										<a
+											href="#"
+											class="btnDisplay"
+											id="userLeft"
+											>User</a
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div
+					id="leftNav"
+					class="d-flex flex-row-reverse bd-highlight nav"
+				>
+					<nav id="nav1">
+						<ul>
+							<li class="menu-deroulant">
+								<a href="#" id="menuB">Choice of view</a>
+								<ul class="sous-menu">
+									<li>
+										<button
+											id="lastImage"
+											data-type="lastImage"
+										>
+											Last image
+										</button>
+									</li>
+									<li>
+										<button
+											id="lastSubstractionImage"
+											data-type="lastSubstractionImage"
+										>
+											Last substraction image
+										</button>
+									</li>
+									<li>
+										<button
+											id="lastAnimation"
+											data-type="lastAnimation"
+										>
+											Last Animation
+										</button>
+									</li>
+									<li>
+										<button
+											id="lastSubstractionAnimation"
+											data-type="lastSubstractionAnimation"
+										>
+											Last Substraction Animation
+										</button>
+									</li>
+									<li>
+										<button
+											id="panorama"
+											data-type="panorama"
+										>
+											Panorama
+										</button>
+									</li>
+									<li>
+										<button
+											id="attenuation"
+											data-type="attenuation"
+										>
+											Attenuation
+										</button>
+									</li>
+									<li>
+										<button id="viewSample">
+											View 1X1
+										</button>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+			<section class="col-xl-6 side" id="rightSide">
+				<!-- Toggle auto refresh -->
+				<div id="toogle_d">
+					<div
+						class="d-flex flex-row-reverse bd-highlight"
+						id="auto_droite"
+					>
+						<div class="bd-highlight">
+							<label class="switch" for="checkbox-rightSide">
+								<input
+									type="checkbox"
+									id="checkbox-rightSide"
+									checked
+								/>
+								<div class="slider round"></div>
+							</label>
+							<p id="d2">Auto refresh</p>
+						</div>
+					</div>
+					<!-- Fin toggle auto refresh -->
+					<!-- Toggle overlay -->
+					<div
+						id="lastDroite"
+						class="d-flex flex-row-reverse bd-highlight"
+					>
+						<div class="bd-highlight">
+							<label
+								class="switch"
+								for="checkbox_coord-rightSide"
+							>
+								<input
+									type="checkbox"
+									id="checkbox_coord-rightSide"
+								/>
+								<div class="slider round"></div>
+							</label>
+							<p>TCS - Overlay</p>
+						</div>
+					</div>
+				</div>
+				<!-- Fin toggle overlay -->
+				<div id="warning" class="warningRight"></div>
+				<div id="infoImg" class="rightInfo"></div>
+				<div id="content" class="right"></div>
+				<div id="menuRight">
+					<div id="menuD">
+						<ul>
+							<li class="menuDeroulant">
+								<a href="#" id="menuDisplay">Display</a>
+								<ul class="sousMenuDisplay">
+									<li>
+										<a
+											href="#"
+											class="btnDisplay"
+											id="defaultRight"
+											>Default</a
+										>
+									</li>
+									<li>
+										<a
+											href="#"
+											class="btnDisplay"
+											id="invertDefaultRight"
+											>Invert</a
+										>
+									</li>
+									<li>
+										<a
+											href="#"
+											class="btnDisplay"
+											id="userRight"
+											>User</a
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div
+					id="rightNav"
+					class="d-flex flex-row-reverse bd-highlight nav"
+				>
+					<nav id="navDroite">
+						<ul>
+							<li class="menu-deroulant">
+								<a href="#" id="menuA">Choice of view</a>
+								<ul class="sous-menu">
+									<li>
+										<button
+											id="lastImage"
+											data-type="lastImage"
+										>
+											Last image
+										</button>
+									</li>
+									<li>
+										<button
+											id="lastSubstractionImage"
+											data-type="lastSubstractionImage"
+										>
+											Last substraction image
+										</button>
+									</li>
+									<li>
+										<button
+											id="lastAnimation"
+											data-type="lastAnimation"
+										>
+											Last Animation
+										</button>
+									</li>
+									<li>
+										<button
+											id="lastSubstractionAnimation"
+											data-type="lastSubstractionAnimation"
+										>
+											Last Substraction Animation
+										</button>
+									</li>
+									<li>
+										<button
+											id="panorama"
+											data-type="panorama"
+										>
+											Panorama
+										</button>
+									</li>
+									<li>
+										<button
+											id="attenuation"
+											data-type="attenuation"
+										>
+											Attenuation
+										</button>
+									</li>
+									<li>
+										<button id="viewSample">
+											View 1X1
+										</button>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+		</section>
+		<footer id="footerGauche">
+			<!-- Input luminosité & contrast -->
+			<div class="reglage" id="reglageGauche">
+				<div>
+					<div id="brightnessFormGauche">
+						<span id="brightness">Brightness<small>i</small></span>
+						<input
+							type="range"
+							name="amountRange"
+							class="rangeBrightness bLeft bLRange"
+							id="leftSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<input
+							type="number"
+							class="rangeBrightness bLNumber"
+							id="leftSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<a href="#" id="resetBrightnessLeft"
+							><svg
+								xmlns="./ressources/arrow-clockwise.svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-arrow-clockwise"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+								/>
+								<path
+									d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+								/></svg
+						></a>
+					</div>
+				</div>
+				<div>
+					<div id="contrastFormGauche">
+						<span id="const">Contrast<small>----</small></span>
+						<input
+							type="range"
+							name="amountRange"
+							class="rangeContrast cLeft cLRange"
+							id="leftSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<input
+							type="number"
+							class="rangeContrast cLNumber"
+							id="leftSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<a href="#" id="resetContrastLeft"
+							><svg
+								xmlns="./ressources/arrow-clockwise.svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-arrow-clockwise"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+								/>
+								<path
+									d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+								/></svg
+						></a>
+					</div>
+					<div id="invertFormGauche">
+						<span id="invert">Invert<small>-------||</small></span>
+						<input
+							type="range"
+							name="amountRange"
+							class="rangeInvert iLeft iLRange"
+							id="leftSide"
+							min="0"
+							max="1"
+							step="0.10"
+						/>
+						<input
+							type="number"
+							class="rangeInvert iLNumber"
+							id="leftSide"
+							min="0"
+							max="1"
+							step="0.10"
+						/>
+						<a href="#" id="resetInvertLeft"
+							><svg
+								xmlns="./ressources/arrow-clockwise.svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-arrow-clockwise"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+								/>
+								<path
+									d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+								/></svg
+						></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<footer id="footerDroite">
+			<!-- Input luminosité & contrast -->
+			<div class="reglage" id="reglageDroite">
+				<div>
+					<div id="brightnessFormDroite">
+						<span id="brightness">Brightness<small>i</small></span>
+						<input
+							type="range"
+							name="amountRange"
+							class="rangeBrightness bRight bRRange"
+							id="rightSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<input
+							type="number"
+							class="rangeBrightness bRNumber"
+							id="rightSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<a href="#" id="resetBrightnessRight"
+							><svg
+								xmlns="./ressources/arrow-clockwise.svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-arrow-clockwise"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+								/>
+								<path
+									d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+								/></svg
+						></a>
+					</div>
+				</div>
+				<div>
+					<div id="contrastFormDroite">
+						<span id="const">Contrast<small>----</small></span>
+						<input
+							type="range"
+							name="amountRange"
+							class="rangeContrast cRight cRRange"
+							id="rightSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<input
+							type="number"
+							class="rangeContrast cRNumber"
+							id="rightSide"
+							min="0"
+							max="5"
+							step="0.10"
+						/>
+						<a href="#" id="resetContrastRight"
+							><svg
+								xmlns="./ressources/arrow-clockwise.svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-arrow-clockwise"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+								/>
+								<path
+									d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+								/></svg
+						></a>
+					</div>
+					<div id="invertFormDroite">
+						<span id="invert">Invert<small>-------||</small></span>
+						<input
+							type="range"
+							name="amountRange"
+							class="rangeInvert iRight iRRange"
+							id="rightSide"
+							min="0"
+							max="1"
+							step="0.10"
+						/>
+						<input
+							type="number"
+							class="rangeInvert iRNumber"
+							id="rightSide"
+							min="0"
+							max="1"
+							step="0.10"
+						/>
+						<a href="#" id="resetInvertRight"
+							><svg
+								xmlns="./ressources/arrow-clockwise.svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-arrow-clockwise"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+								/>
+								<path
+									d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+								/></svg
+						></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- **** SCRIPTS **** -->
+		<script src="./assets/js/utilsDouble.js"></script>
+		<script src="./assets/js/Components/loadView.js"></script>
+		<script src="./assets/js/Components/loadCoords.js"></script>
+		<script src="./assets/js/reload.js"></script>
+		<script src="./assets/js/lumiContrast.js"></script>
+		<script src="./assets/js/dual_view/view1X1.js"></script>
+		<script src="./assets/js/dual_view/fullScreen.js"></script>
+		<script src="./assets/js/dual_view/inactivite.js"></script>
+		<script src="./assets/js/panzoom.min.js"></script>
+		<script src="./assets/js/dual_view/index.js"></script>
+		<script src="./assets/js/dateImg.js" defer></script>
+
+		<script>
+			var rightSide = document.querySelector(".right");
+
+			panzoom(rightSide, {
+				maxZoom: 3,
+				minZoom: 1,
+				zoomDoubleClickSpeed: 3,
+				// desactive les touche du clavier
+				filterKey: function (/* e, dx, dy, dz */) {
+					// ne laissez pas panzoom gérer cet événement :
+					return true;
+				},
+				// beforeMouseDown: function (e) {
+				// 	// autorise le déplacement de la souris uniquement si altKey est enfoncé. Sinon - ignore
+				// 	var shouldIgnore = !e.altKey;
+				// 	return shouldIgnore;
+				// },
+				// beforeWheel: function (e) {
+				// 	// autoriser le zoom de roue uniquement si altKey est enfoncé. Sinon - ignore
+				// 	var shouldIgnore = !e.altKey;
+				// 	return shouldIgnore;
+				// },
+			});
+
+			var leftSide = document.querySelector(".left");
+
+			panzoom(leftSide, {
+				maxZoom: 3,
+				minZoom: 1,
+				zoomDoubleClickSpeed: 3,
+				// desactive les touche du clavier
+				filterKey: function (/* e, dx, dy, dz */) {
+					// ne laissez pas panzoom gérer cet événement :
+					return true;
+				},
+				// beforeMouseDown: function (e) {
+				// 	// autorise le déplacement de la souris uniquement si altKey est enfoncé. Sinon - ignore
+				// 	var shouldIgnore = !e.altKey;
+				// 	return shouldIgnore;
+				// },
+				// beforeWheel: function (e) {
+				// 	// autoriser le zoom de roue uniquement si altKey est enfoncé. Sinon - ignore
+				// 	var shouldIgnore = !e.altKey;
+				// 	return shouldIgnore;
+				// },
+			});
+		</script>
+	</body>
+</html>
