@@ -93,17 +93,8 @@ async function reload(type, side = "main") {
 	// const refresh = json.timer;
 	let refreshEnabled = document.querySelector(`#${side} #checkbox-${side}`);
 	// /** Get event if button changed */
-	//console.log(refreshEnabled);
-
-	// var now = new Date();
-
-	// mins = 3 + (now.getMinutes() % 5);
-	// secs = now.getSeconds();
-	// mills = now.getMilliseconds();
-
-	// laps = mins * 60 * 1000 + secs * 1000 + mills;
-	// console.log(laps);
-
+	console.log(refreshEnabled);
+	console.log(displayImage);
 	const createInterval = () => {
 		clearInterval(window.refreshTime);
 		window.refreshTime = setInterval(changeOnInterval, 10000);
@@ -112,9 +103,12 @@ async function reload(type, side = "main") {
 		//console.log(`je reload ${side}`);
 		if (side === "rightSide") {
 			console.log("rightSide");
+			//console.log(displayImage);
 		} else if (side === "leftSide") {
 			console.log("leftSide");
+			//console.log(displayImage);
 		}
+
 		loadView(
 			getItem(`type-${side}`),
 			side,
@@ -123,12 +117,13 @@ async function reload(type, side = "main") {
 			getItem(`contrast-${side}`),
 			getItem(`invert-${side}`)
 		);
+		//console.log(displayImage);
 		if (type === "lastImage" || type === "lastSubstractionImage") {
 			loadCoords(tcs.img, side);
 		}
 		dateImage(getItem(`type-${side}`), side);
 	};
-	//console.log(side);
+	// //console.log(side);
 
 	if (refreshEnabled.checked) {
 		createInterval();
