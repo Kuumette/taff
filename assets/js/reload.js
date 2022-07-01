@@ -18,7 +18,7 @@
  */
 let refreshTime;
 async function reload(type, side = "main") {
-	//console.log(type);
+	//console.log("reload");
 	/** Je fetch les information dont j'ai besoins */
 	let tmp = new Date();
 	const response = await fetch(
@@ -90,37 +90,76 @@ async function reload(type, side = "main") {
 		});
 	}
 	/** Get TIMER */
-	const refresh = json.timer;
+	// const refresh = json.timer;
 	let refreshEnabled = document.querySelector(`#${side} #checkbox-${side}`);
-	let refreshTime = null;
+	// /** Get event if button changed */
 	//console.log(refreshEnabled);
-	/** Get event if button changed */
+
+	// var now = new Date();
+
+	// mins = 3 + (now.getMinutes() % 5);
+	// secs = now.getSeconds();
+	// mills = now.getMilliseconds();
+
+	// laps = mins * 60 * 1000 + secs * 1000 + mills;
+	// console.log(laps);
+
+	const createInterval = () => {
+		clearInterval(window.refreshTime);
+		window.refreshTime = setInterval(changeOnInterval, 10000);
+	};
+	const changeOnInterval = () => {
+		//console.log(`je reload ${side}`);
+		if (side === "rightSide") {
+			console.log("rightSide");
+		} else if (side === "leftSide") {
+			console.log("leftSide");
+		}
+		loadView(
+			getItem(`type-${side}`),
+			side,
+			displayImage,
+			getItem(`brightness-${side}`),
+			getItem(`contrast-${side}`),
+			getItem(`invert-${side}`)
+		);
+		if (type === "lastImage" || type === "lastSubstractionImage") {
+			loadCoords(tcs.img, side);
+		}
+		dateImage(getItem(`type-${side}`), side);
+	};
+	//console.log(side);
 
 	if (refreshEnabled.checked) {
-		refreshTime = setInterval(function () {
-			console.log("reload");
-			loadView(
-				getItem(`type-${side}`),
-				side,
-				displayImage,
-				getItem(`brightness-${side}`),
-				getItem(`contrast-${side}`),
-				getItem(`invert-${side}`)
-			);
-			addFilter(
-				img,
-				getItem(`brightness-${side}`),
-				getItem(`contrast-${side}`),
-				getItem(`invert-${side}`)
-			);
-			//console.log(getItem(`type-${side}`));
-
-			loadCoords(tcs.img, side);
-
-			dateImage(getItem(`type-${side}`), side);
-		}, 10000);
+		createInterval();
 	}
-	//clearInterval(refreshTime); MARCHE PAS
+	//else {
+	//clearInterval(window.refreshTime);
+	//}
+
+	// const refresh = json.timer;
+	// let refreshEnabled = document.querySelector(`#${side} #checkbox-${side}`);
+	// let refreshTime = null;
+	// //console.log(refreshEnabled);
+	// /** Get event if button changed */
+
+	// if (refreshEnabled.checked) {
+	// 	refreshTime = setInterval(function () {
+	// 		console.log("reload");
+	// 		loadView(
+	// 			getItem(`type-${side}`),
+	// 			side,
+	// 			displayImage,
+	// 			getItem(`brightness-${side}`),
+	// 			getItem(`contrast-${side}`),
+	// 			getItem(`invert-${side}`)
+	// 		);
+
+	// 		loadCoords(tcs.img, side);
+
+	// 		dateImage(getItem(`type-${side}`), side);
+	// 	}, 10000);
+	// }
 	//  else {
 	// 	clearInterval(refreshTime);
 	// }

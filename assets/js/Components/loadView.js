@@ -44,7 +44,7 @@ function loadView(type, side, displayImage, brightness, contrast, invert) {
 				`;
 				INFO_IMG.innerHTML = infoImg;
 			});
-	}, 60000);
+	}, 10000);
 
 	//console.log(infoImg);
 	// const infoImg = "";
